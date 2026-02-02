@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HANAYUKI v7.0.0 | PRIVACY POLICY</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --neon-blue: #00f3ff;
+            --neon-pink: #ff00ff;
+            --neon-purple: #8a2be2;
+            --dark-bg: #0a0a0f;
+            --darker-bg: #05050a;
+            --grid-color: rgba(0, 243, 255, 0.1);
+            --text-glow: 0 0 10px currentColor;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        body {
+            font-family: 'Orbitron', 'Segoe UI', sans-serif;
+            background-color: var(--dark-bg);
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Grid Background */
+        .grid-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(var(--grid-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -2;
+            opacity: 0.3;
+        }
+
+        /* Scanlines Effect */
+        .scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to bottom,
+                transparent 50%,
+                rgba(0, 243, 255, 0.03) 50%
+            );
+            background-size: 100% 4px;
+            z-index: -1;
+            pointer-events: none;
+            animation: scanlines 10s linear infinite;
+        }
+
+        @keyframes scanlines {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(4px); }
+        }
+
+        /* Neon Glow Effects */
+        .neon-text {
+            color: var(--neon-blue);
+            text-shadow: var(--text-glow);
+        }
+
+        .neon-pink {
+            color: var(--neon-pink);
+            text-shadow: var(--text-glow);
+        }
+
+        .neon-border {
+            border: 2px solid var(--neon-blue);
+            box-shadow: 
+                inset 0 0 10px var(--neon-blue),
+                0 0 20px var(--neon-blue);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .cyber-header {
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            border-bottom: 2px solid var(--neon-blue);
+            margin-bottom: 60px;
+        }
+
+        .cyber-header::before,
+        .cyber-header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            width: 100px;
+            height: 4px;
+            background: var(--neon-pink);
+            animation: glitch 3s infinite;
+        }
+
+        .cyber-header::before {
+            left: 20%;
+        }
+
+        .cyber-header::after {
+            right: 20%;
+        }
+
+        @keyframes glitch {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(10px); }
+        }
+
+        .profile-hologram {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .hologram-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+
+        .hologram-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            filter: hue-rotate(180deg) contrast(1.5);
+            border: 3px solid transparent;
+            animation: hologram 4s infinite alternate;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes hologram {
+            0% {
+                box-shadow: 
+                    0 0 20px var(--neon-blue),
+                    0 0 40px var(--neon-blue),
+                    0 0 60px var(--neon-blue);
+                filter: hue-rotate(0deg) contrast(1.5);
+            }
+            100% {
+                box-shadow: 
+                    0 0 30px var(--neon-pink),
+                    0 0 60px var(--neon-pink),
+                    0 0 90px var(--neon-pink);
+                filter: hue-rotate(360deg) contrast(1.5);
+            }
+        }
+
+        .version-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: var(--neon-pink);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            z-index: 2;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .cyber-title {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+        }
+
+        .cyber-title::after {
+            content: '_';
+            animation: cursor 1s infinite;
+            color: var(--neon-blue);
+        }
+
+        @keyframes cursor {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #a0a0ff;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cyber-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+            color: white;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cyber-button::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                transparent 30%,
+                rgba(255, 255, 255, 0.1) 50%,
+                transparent 70%
+            );
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .cyber-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 
+                0 10px 30px var(--neon-blue),
+                0 0 50px var(--neon-blue);
+        }
+
+        /* Main Content */
+        .cyber-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .cyber-card {
+            background: rgba(10, 10, 20, 0.8);
+            border: 1px solid rgba(0, 243, 255, 0.3);
+            border-radius: 10px;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .cyber-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
+        }
+
+        .cyber-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--neon-blue);
+            box-shadow: 
+                0 10px 30px rgba(0, 243, 255, 0.2),
+                inset 0 0 20px rgba(0, 243, 255, 0.1);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 243, 255, 0.1);
+            border: 1px solid var(--neon-blue);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--neon-blue);
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            color: var(--neon-blue);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cyber-card p, .cyber-card li {
+            color: #b0b0ff;
+            margin-bottom: 15px;
+            line-height: 1.6;
+            font-size: 1.05rem;
+        }
+
+        .cyber-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .cyber-card li {
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 12px;
+        }
+
+        .cyber-card li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: var(--neon-pink);
+            font-size: 0.8rem;
+        }
+
+        .data-matrix {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 243, 255, 0.2);
+        }
+
+        .data-matrix th {
+            background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+            color: white;
+            padding: 20px;
+            text-align: left;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .data-matrix td {
+            padding: 20px;
+            border-bottom: 1px solid rgba(0, 243, 255, 0.1);
+            color: #b0b0ff;
+        }
+
+        .data-matrix tr:hover {
+            background: rgba(0, 243, 255, 0.05);
+        }
+
+        .alert-box {
+            background: rgba(255, 0, 255, 0.1);
+            border-left: 4px solid var(--neon-pink);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 10px 10px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .alert-box::before {
+            content: '⚠️';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5rem;
+            opacity: 0.3;
+        }
+
+        .code-block {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--neon-blue);
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: monospace;
+            color: var(--neon-blue);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .code-block::before {
+            content: '>>>';
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            color: var(--neon-pink);
+        }
+
+        .code-block code {
+            padding-left: 40px;
+            display: block;
+        }
+
+        /* Footer */
+        .cyber-footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 2px solid var(--neon-blue);
+            position: relative;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .contact-node {
+            background: rgba(10, 10, 20, 0.8);
+            border: 1px solid rgba(0, 243, 255, 0.3);
+            border-radius: 10px;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: all 0.3s;
+        }
+
+        .contact-node:hover {
+            border-color: var(--neon-pink);
+            transform: translateY(-5px);
+        }
+
+        .contact-node i {
+            font-size: 2rem;
+            color: var(--neon-blue);
+        }
+
+        .contact-info {
+            text-align: left;
+        }
+
+        .contact-label {
+            color: #a0a0ff;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-value {
+            color: white;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 5px;
+        }
+
+        .copyright {
+            color: #6666ff;
+            font-size: 0.9rem;
+            margin-top: 40px;
+            opacity: 0.7;
+        }
+
+        /* Floating Elements */
+        .floating-terminal {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            text-decoration: none;
+            z-index: 1000;
+            animation: terminal-pulse 2s infinite;
+        }
+
+        @keyframes terminal-pulse {
+            0%, 100% { 
+                box-shadow: 
+                    0 0 20px var(--neon-blue),
+                    0 0 40px var(--neon-blue);
+            }
+            50% { 
+                box-shadow: 
+                    0 0 30px var(--neon-pink),
+                    0 0 60px var(--neon-pink);
+            }
+        }
+
+        /* Loading Animation */
+        .loading-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
+            z-index: 9999;
+            transform-origin: left;
+            animation: loading 2s ease-out;
+        }
+
+        @keyframes loading {
+            0% { transform: scaleX(0); }
+            100% { transform: scaleX(1); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cyber-title {
+                font-size: 2.5rem;
+            }
+            
+            .profile-hologram {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .cyber-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cyber-button {
+                padding: 15px 30px;
+                font-size: 1rem;
+            }
+            
+            .floating-terminal {
+                width: 60px;
+                height: 60px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cyber-title {
+                font-size: 2rem;
+            }
+            
+            .cyber-card {
+                padding: 20px;
+            }
+            
+            .card-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Grid Background -->
+    <div class="grid-bg"></div>
+    <div class="scanlines"></div>
+    
+    <!-- Loading Animation -->
+    <div class="loading-bar"></div>
+
+    <!-- Floating Terminal -->
+    <a href="https://t.me/hanayuki01_bot" target="_blank" class="floating-terminal">
+        <i class="fab fa-telegram-plane"></i>
+    </a>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="cyber-header">
+            <div class="profile-hologram">
+                <div class="hologram-container">
+                    <img src="https://iili.io/fZ2b3Mb.jpg" alt="HanaYuki AI Core" class="hologram-image">
+                    <div class="version-badge">v7.0.0</div>
+                </div>
+                <div>
+                    <h1 class="cyber-title neon-text">HANAYUKI AI</h1>
+                    <p class="tagline">SYSTEM: TELEGRAM BOT | STATUS: OPERATIONAL | FOCUS: DATA PROTECTION</p>
+                    <a href="https://t.me/hanayuki01_bot" class="cyber-button" target="_blank">
+                        <i class="fab fa-telegram-plane"></i>
+                        INITIATE CONNECTION
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Last Updated -->
+        <div style="text-align: right; margin: 30px 0; color: #6666ff; font-size: 0.9rem;">
+            <i class="fas fa-sync-alt"></i> SYSTEM UPDATE: 15.10.2023
+        </div>
+
+        <!-- Main Content -->
+        <div class="cyber-grid">
+            <!-- System Overview -->
+            <div class="cyber-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="card-title">SYSTEM OVERVIEW</h3>
+                </div>
+                <p>HanaYuki v7.0.0 adalah asisten AI canggih yang beroperasi pada jaringan Telegram dengan fokus utama pada keamanan data dan privasi pengguna.</p>
+                <div class="alert-box">
+                    <p><strong>PERINGATAN SISTEM:</strong> Bot ini tidak berafiliasi dengan Telegram Inc. Semua interaksi tunduk pada kebijakan privasi ini.</p>
+                </div>
+            </div>
+
+            <!-- Data Collection -->
+            <div class="cyber-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="card-title">DATA COLLECTION</h3>
+                </div>
+                <p>HanaYuki mengumpulkan data berikut untuk operasional sistem:</p>
+                <ul>
+                    <li>Telegram User ID (unik)</li>
+                    <li>Username Telegram (opsional)</li>
+                    <li>Bahasa preferensi sistem</li>
+                    <li>Log interaksi (30 hari maks)</li>
+                    <li>Pengaturan kustomisasi</li>
+                </ul>
+                <div class="alert-box">
+                    <p><strong>DATA YANG TIDAK DIKUMPULKAN:</strong> Password, data finansial, informasi sensitif lainnya.</p>
+                </div>
+            </div>
+
+            <!-- Data Usage -->
+            <div class="cyber-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="card-title">DATA USAGE</h3>
+                </div>
+                <p>Data digunakan secara eksklusif untuk:</p>
+                <ul>
+                    <li>Optimisasi pengalaman pengguna</li>
+                    <li>Personalisasi respons AI</li>
+                    <li>Analisis performa sistem</li>
+                    <li>Deteksi & pencegahan abuse</li>
+                    <li>Pengembangan fitur baru</li>
+                </ul>
+            </div>
+
+            <!-- Data Storage -->
+            <div class="cyber-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="card-title">DATA STORAGE</h3>
+                </div>
+                <table class="data-matrix">
+                    <tr>
+                        <th>DATA TYPE</th>
+                        <th>RETENTION</th>
+                        <th>ENCRYPTION</th>
+                    </tr>
+                    <tr>
+                        <td>User Data</td>
+                        <td>Active Account</td>
+                        <td>AES-256</td>
+                    </tr>
+                    <tr>
+                        <td>Interaction Logs</td>
+                        <td>30 Days</td>
+                        <td>AES-256</td>
+                    </tr>
+                    <tr>
+                        <td>System Logs</td>
+                        <td>7 Days</td>
+                        <td>AES-256</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- User Rights -->
+            <div class="cyber-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h3 class="card-title">USER RIGHTS</h3>
+                </div>
+                <p>Pengguna memiliki hak berikut:</p>
+                <ul>
+                    <li>Akses ke data pribadi</li>
+                    <li>Koreksi data tidak akurat</li>
+                    <li>Penghapusan data permanen</li>
+                    <li>Pembatasan pemrosesan</li>
+                    <li>Penarikan persetujuan</li>
+                </ul>
+                <div class="code-block">
+                    <code>/delete_mydata</code>
+                </div>
+                <p>Gunakan command di atas untuk menghapus semua data Anda dari sistem.</p>
+            </div>
+
+            <!-- Security -->
+            <div class="cyber-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3 class="card-title">SECURITY MEASURES</h3>
+                </div>
+                <p>Langkah keamanan yang diterapkan:</p>
+                <ul>
+                    <li>Enkripsi end-to-end</li>
+                    <li>Access control ketat</li>
+                    <li>Regular security audit</li>
+                    <li>Real-time monitoring</li>
+                    <li>Automated threat detection</li>
+                </ul>
+            </div>
+
+            <!-- Data Sharing -->
+            <div class="cyber-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <h3 class="card-title">DATA SHARING</h3>
+                </div>
+                <p>Data <strong>TIDAK</strong> dibagikan dengan pihak ketiga kecuali:</p>
+                <ul>
+                    <li>Dengan persetujuan pengguna</li>
+                    <li>Kepatuhan hukum yang berlaku</li>
+                    <li>Perlindungan hak & keamanan</li>
+                    <li>Transfer bisnis (dengan notifikasi)</li>
+                </ul>
+            </div>
+
+            <!-- Updates -->
+            <div class="cyber-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-sync"></i>
+                    </div>
+                    <h3 class="card-title">POLICY UPDATES</h3>
+                </div>
+                <p>Kebijakan ini dapat diperbarui. Pengguna akan diberitahu melalui:</p>
+                <ul>
+                    <li>Notifikasi via bot</li>
+                    <li>Update timestamp</li>
+                    <li>Posting di channel resmi</li>
+                </ul>
+                <p>Penggunaan berkelanjutan setelah update berarti penerimaan perubahan.</p>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <footer class="cyber-footer">
+            <h3 class="card-title" style="text-align: center; margin-bottom: 40px;">SYSTEM CONTACT</h3>
+            <div class="contact-grid">
+                <div class="contact-node">
+                    <i class="fab fa-telegram-plane"></i>
+                    <div class="contact-info">
+                        <div class="contact-label">TELEGRAM BOT</div>
+                        <div class="contact-value">@hanayuki01_bot</div>
+                    </div>
+                </div>
+                <div class="contact-node">
+                    <i class="fas fa-envelope"></i>
+                    <div class="contact-info">
+                        <div class="contact-label">EMAIL SUPPORT</div>
+                        <div class="contact-value">privacy@hanayuki.ai</div>
+                    </div>
+                </div>
+                <div class="contact-node">
+                    <i class="fas fa-globe"></i>
+                    <div class="contact-info">
+                        <div class="contact-label">WEBSITE</div>
+                        <div class="contact-value">hanayuki.ai</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>HANAYUKI AI v7.0.0 © 2023 | ALL RIGHTS RESERVED</p>
+                <p style="margin-top: 10px; font-size: 0.8rem;">Telegram is a registered trademark of Telegram Messenger Inc.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Sistem inisialisasi
+        document.addEventListener('DOMContentLoaded', function() {
+            // Update tahun
+            const year = new Date().getFullYear();
+            document.querySelector('.copyright p').innerHTML = 
+                `HANAYUKI AI v7.0.0 © ${year} | ALL RIGHTS RESERVED`;
+            
+            // Animasi kartu bertahap
+            const cards = document.querySelectorAll('.cyber-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(50px) scale(0.9)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0) scale(1)';
+                }, 200 + index * 100);
+            });
+            
+            // Efek glitch pada judul
+            const title = document.querySelector('.cyber-title');
+            setInterval(() => {
+                if (Math.random() > 0.9) {
+                    title.style.textShadow = '0 0 20px #ff0000';
+                    setTimeout(() => {
+                        title.style.textShadow = '0 0 10px currentColor';
+                    }, 100);
+                }
+            }, 1000);
+            
+            // Proteksi copy-paste
+            document.addEventListener('copy', function(e) {
+                e.preventDefault();
+                showTerminalMessage('COPY PROTECTION: Copying disabled');
+            });
+            
+            document.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+                showTerminalMessage('SECURITY: Context menu disabled');
+            });
+            
+            function showTerminalMessage(message) {
+                // Buat elemen pesan
+                const msg = document.createElement('div');
+                msg.textContent = message;
+                msg.style.cssText = `
+                    position: fixed;
+                    bottom: 100px;
+                    right: 30px;
+                    background: rgba(0, 0, 0, 0.9);
+                    color: #00ff00;
+                    padding: 10px 20px;
+                    border: 1px solid #00ff00;
+                    font-family: monospace;
+                    z-index: 10000;
+                    border-radius: 5px;
+                    animation: fadeOut 2s forwards;
+                `;
+                document.body.appendChild(msg);
+                
+                // Hapus setelah 2 detik
+                setTimeout(() => msg.remove(), 2000);
+            }
+            
+            // Animasi loading selesai
+            setTimeout(() => {
+                document.querySelector('.loading-bar').style.opacity = '0';
+                setTimeout(() => {
+                    document.querySelector('.loading-bar').remove();
+                }, 1000);
+            }, 2000);
+            
+            // Efek hover pada kartu
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.zIndex = '10';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.zIndex = '1';
+                });
+            });
+            
+            // Terminal style cursor
+            document.body.style.cursor = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='none' stroke='%2300f3ff' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='4' fill='%2300f3ff'/%3E%3C/svg%3E"), auto`;
+        });
+        
+        // Tambahkan CSS untuk fadeOut
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeOut {
+                0% { opacity: 1; transform: translateY(0); }
+                70% { opacity: 1; transform: translateY(-10px); }
+                100% { opacity: 0; transform: translateY(-20px); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
